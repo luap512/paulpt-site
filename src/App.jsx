@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.href =
+      `mailto:phperez.work1@gmail.com?subject=PT Inquiry&body=Hi Paul,%0D%0A%0D%0AMy goals are...%0D%0A%0D%0AName:%0D%0AEmail:${encodeURIComponent(email)}`;
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <main className="wrapper">
+      <section className="card">
+        <h1>Train with Paul – NASM Certified</h1>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Lean, athletic, disciplined coaching. In-person (Knox) or online.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+        <p>First consult free!</p>
 
-export default App
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            required
+            placeholder="you@email.com"
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
+          />
+          <button type="submit">
+            Book a Session
+          </button>
+        </form>
+
+        <div>
+          <a href="tel:+15129992571">Call/Text: (512) 999-2571</a> ·{' '}
+          <a href="mailto:phperez.work1@gmail.com">Email Paul</a>
+        </div>
+
+        <hr />
+
+        <ul>
+          <li>• Fat loss & performance programming</li>
+          <li>• Hybrid coaching: gym + jump rope conditioning</li>
+          <li>• Simple nutrition targets (no crazy rules)</li>
+        </ul>
+
+        <p>(Testimonials & Calendly later. MVP first.)</p>
+      </section>
+    </main>
+  );
+}
