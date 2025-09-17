@@ -30,35 +30,38 @@ export default function Navbar() {
 
 
     return (
-        <header className={scrolled ? "scrolled" : ''}>
-            <nav>
-                {/* Brand */}
-                <a href="/">
-                    <strong>Paul Perez Training</strong>
-                </a>
+        <>
+            <header className={scrolled ? "scrolled" : ''}>
+                <nav>
+                    {/* Brand */}
+                    <a href="/">
+                        <strong>Paul Perez Training</strong>
+                    </a>
 
 
-                {/* Desktop nav */}
-                <ul className={open ? "mobile-menu-open" : ""}>
-                    {navItems.map((item) => (
-                        <li key={item.href}>
-                            <a href={item.href}>{item.label}</a>
-                        </li>
-                    ))}
-                </ul>
+                    {/* Desktop nav */}
+                    <ul className={open ? "mobile-menu-open" : ""}>
+                        {navItems.map((item) => (
+                            <li key={item.href}>
+                                <a href={item.href}>{item.label}</a>
+                            </li>
+                        ))}
+                    </ul>
 
 
-                {/* CTA */}
-                <a href="/contact">Book Session</a>
+                    {/* CTA */}
+                    <a href="/contact">Book Session</a>
 
 
-                {/* Mobile menu button */}
-                <button
-                className="mobile-menu-toggle"
-                 onClick={() => setOpen((v) => !v)}>
-                    {open ? "Close" : "Menu"}
-                </button>
-            </nav>
-        </header>
+                    {/* Mobile menu button */}
+                    <button
+                        className="mobile-menu-toggle"
+                        onClick={() => setOpen((v) => !v)}>
+                        {open ? "Close" : "Menu"}
+                    </button>
+                </nav>
+            </header>
+            <div style={{ height: '80px' }}></div> {/* Spacer div */}
+        </>
     );
 }
