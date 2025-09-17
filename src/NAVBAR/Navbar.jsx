@@ -53,7 +53,9 @@ export default function Navbar() {
 
 
                 {/* Mobile menu button */}
-                <button onClick={() => setOpen((v) => !v)}>
+                <button
+                className="mobile-menu-toggle"
+                 onClick={() => setOpen((v) => !v)}>
                     {open ? "Close" : "Menu"}
                 </button>
             </nav>
