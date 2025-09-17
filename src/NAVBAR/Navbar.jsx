@@ -39,7 +39,7 @@ export default function Navbar() {
 
 
                 {/* Desktop nav */}
-                <ul style={{ display: open ? "block" : "flex" }}>
+                <ul className={open ? "mobile-menu-open" : ""}>
                     {navItems.map((item) => (
                         <li key={item.href}>
                             <a href={item.href}>{item.label}</a>
