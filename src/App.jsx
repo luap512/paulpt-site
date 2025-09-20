@@ -19,20 +19,20 @@ export default function App() {
         <section className="card">
           <h1>Train with Paul – NASM Certified</h1>
           <p>
-            Lean, athletic, disciplined coaching. In-person (Knox) or online.
+            Get Lean, Strong, and Athletic — Without Wasting Hours in the Gym
           </p>
-          <p>First consult free!</p>
+          <p>1:1 coaching in Knoxville or online. First consult is free!</p>
 
           <form onSubmit={handleSubmit}>
             <input
               type="email"
               required
-              placeholder="you@email.com"
+              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <button type="submit">
-              Book a Session
+              Book Your Free Consult
             </button>
           </form>
 
@@ -43,13 +43,10 @@ export default function App() {
 
           <hr />
 
-          <ul>
-            <li>• Fat loss & performance programming</li>
-            <li>• Hybrid coaching: gym + jump rope conditioning</li>
-            <li>• Simple nutrition targets (no crazy rules)</li>
-          </ul>
+          <p>Most trainers sell workouts. I build results that stick. My system combines science-backed programming with the discipline I forged from years of training and combat sports.
 
-          <p>(Testimonials & Calendly later. MVP first.)</p>
+Training with me isn’t just about looking better — it’s about building confidence, energy, and resilience that last.
+          </p>
         </section>
       </main>
     </div>
